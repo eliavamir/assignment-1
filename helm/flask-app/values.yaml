@@ -1,7 +1,7 @@
 replicaCount: 2 # כמה עותקים של האפליקציה ירוצו (לצורך שרידות)
 
 image:
-  repository: <YOUR_ECR_REPOSITORY_URL> # כאן שמים את הכתובת מה-Terraform
+  repository: 639418629537.dkr.ecr.us-east-1.amazonaws.com/app-repo-new
   pullPolicy: IfNotPresent
   tag: "latest"
 
