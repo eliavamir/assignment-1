@@ -7,8 +7,8 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: flask-app
-  EKS_CLUSTER_NAME: main-eks-cluster # שנה לשם הקלאסטר שלך
+  ECR_REPOSITORY: app-repo-new
+  EKS_CLUSTER_NAME: my-cluster-new # שנה לשם הקלאסטר שלך
 
 jobs:
   deploy:
