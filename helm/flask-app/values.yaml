@@ -1,0 +1,11 @@
+replicaCount: 2 # כמה עותקים של האפליקציה ירוצו (לצורך שרידות)
+
+image:
+  repository: <YOUR_ECR_REPOSITORY_URL> # כאן שמים את הכתובת מה-Terraform
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: LoadBalancer # זה מה שיוצר כתובת אינטרנט ציבורית ב-AWS
+  port: 80           # הפורט החיצוני שהעולם רואה
+  targetPort: 5000   # הפורט הפנימי של ה-Flask

@@ -1,0 +1,10 @@
+# Application & Dockerization (האפליקציה ודוקר)
+
+Instructions to containerize the Flask app.
+(הוראות לאריזת אפליקציית הפלאסק בקונטיינר).
+
+## Instructions (הוראות ביצוע)
+1. **Build (בנייה):** `docker build -t flask-app .`
+2. **Local Test (בדיקה מקומית):** `docker run -p 5000:5000 flask-app`
+3. **Push (שליחה לענן):** Authenticate with AWS and push the image to ECR.
+   (התחברות ל-AWS ושליחת האימג' למחסן ה-ECR).

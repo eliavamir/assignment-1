@@ -1,0 +1,27 @@
+# DevOps Assignment: Flask Application on AWS EKS
+(משימת דאבוופס: אפליקציית פלאסק על גבי קלאסטר EKS ב-AWS)
+
+## Project Structure (מבנה הפרויקט)
+- `terraform/`: Infrastructure as Code (קוד להקמת התשתית ב-AWS)
+- `app/`: Flask application and Dockerfile (קוד האפליקציה והוראות האריזה)
+- `helm/`: Kubernetes deployment manifests (ניהול הפריסה לקוברנטיס)
+- `.github/workflows/`: CI/CD automation (אוטומציה של התהליך)
+
+## How to Deploy (איך להריץ את הפרויקט)
+
+### Step 1: Infrastructure (שלב 1: הקמת התשתית)
+1. Go to `terraform/` folder (היכנס לתיקיית טרפורם).
+2. Run `terraform init` (הורדת הגדרות ספק הענן).
+3. Run `terraform apply` (הקמת ה-VPC והשרתים בפועל).
+
+### Step 2: Dockerize & Push (שלב 2: יצירת אימג' ושליחתו לענן)
+1. Build the image: `docker build -t flask-app .` (בניית ה"מכולה" של האפליקציה).
+2. Push to ECR (שליחת האימג' למחסן שבנינו ב-AWS).
+
+### Step 3: Application Deployment (שלב 3: פריסת האפליקציה)
+1. Deploy with Helm: `helm install flask-app ./helm` (התקנת האפליקציה בתוך השרתים).
+2. Get public URL: `kubectl get svc` (קבלת הכתובת הציבורית לגלישה).
+
+## Methodologies (עקרונות עבודה)
+- **Security:** Private subnets for nodes (אבטחה: השרתים יושבים ברשת פנימית מוגנת).
+- **Cost Awareness:** Used t3.medium instances (חיסכון: שימוש בשרתים זולים יחסית).
